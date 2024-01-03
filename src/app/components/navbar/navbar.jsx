@@ -15,7 +15,7 @@ export default function Navbar() {
       className="bg-gray-900 text-[#fff] w-full ease-in duration-400 
       fixed top-0 left-0 z-10"
     >
-      <nav className="max-w-[1366] max-auto h-[70px] flex justify-between items-center p-4">
+      <nav className="max-w-[1366] max-auto h-[100px] flex justify-between items-center p-4">
         <div>
           <Link href="/" onClick={handleSmallerScreensNavigation}>
             <span className="font-extrabold text-3xl md:text-2xl xl: text3xl uppercase">

@@ -10,7 +10,7 @@ const ProjectCard = ({ title, description, imageUrl, button }) => {
           <div className={styles['project-info']}>
             <h3>{title}</h3>
             <p>{description}</p>
-            <button style={{float: "right", marginTop: "20px"}}id="button">{button}</button>
+            <button style={{float: "right", marginTop: "20px"}}>{button}</button>
           </div>
         </div>
       );

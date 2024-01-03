@@ -15,11 +15,12 @@ const HeroComponent = () => {
         />
         <div className={styles.heroTextContainer}>
           <h1 className={styles.heroText}>Creating a Unique and Fresh Look</h1>
-          <h3 style={{ color: 'white' }}>Free Quotes</h3>
+          <h2 style={{ color: 'white', fontSize: "25px" }}>Free Quotes</h2>
 
           <div>
-            <a href="tel:+7930097259" className={styles.contactButton}>Call Joseph</a>
-            <button className={styles.contactButton}>Contact Us</button>
+          <a href="tel:+7930097259" className={`contactButton ${styles.contactButton}`}>Call Joseph</a>
+<button className={`contactButton ${styles.contactButton}`}>Contact Us</button>
+
           </div>
         </div>
       </div>
