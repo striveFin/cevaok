@@ -23,24 +23,26 @@ const TextContainer = ({content, bgColor, showButton}) => {
     initial={{ x: '-100vw' }} // Off-screen position (left side)
     animate={controls}
     transition={{ duration: 1, type: 'spring', stiffness: 80 }}
-    className={`w-full ${bgColor} text-white p-8 mt-8`}
+    className={`w-full ${bgColor} text-white p-8 `}
   >
     {content.map((paragraph, index) => (
-      <div key={index} className={`mb-6 ${index === 0 ? 'text-lg' : 'text-base'} ${
-        index === 1 ? 'md:flex md:content-start' : ''
-      }`}>
-        <p>{paragraph}</p>
-      </div>
-    ))}
-    {showButton && (
-      <Link
-      href="/contact"
-      className="block bg-blue-500 text-white font-bold py-2 px-2 rounded hover:bg-blue-600 text-sm text-center  md:text-base md:px-6 md:py-3 md:w-36 md:mx-auto "
-    >
-      Contact Us
-    </Link>
-    
-    )}
+  <div key={index} className={`mb-6 ${index === 0 ? 'text-lg' : 'text-base'} ${
+    index === 1 ? 'md:flex md:content-start text-4xl text-green-500' : ''
+  }`}>
+    <p>{paragraph}</p>
+  </div>
+))}
+
+
+{showButton && (
+  <Link
+    href="/pages/contact"
+    className="block bg-blue-600 text-white font-bold py-1 px-1 rounded hover:bg-green-600 hover:border-white text-sm text-center  md:text-base md:px-6 md:py-3 md:w-36 md:mx-auto border-2 border-blue-500"
+  >
+    Contact Us
+  </Link>
+)}
+
   </motion.div>
 
     </div>

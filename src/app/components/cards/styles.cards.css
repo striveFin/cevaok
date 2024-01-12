@@ -5,7 +5,12 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
+
+}
+
+article {
   background-color: #f4f4f4;
+
 }
 
 .project-card:hover {
@@ -35,29 +40,45 @@ h3 {
 
 
 button {
+  display: inline-block;
+  padding: 6px 20px;
+  font-size: 1.2rem;
+  border: 2px solid #fff; /* Add a border for better visibility */
+  border-radius: 8px;
   background-color: #2196f3;
   color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  margin: 10px;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 button:hover {
-  background-color: #1769aa;
-  transform: scale(1.05);
+  background-color: #45a049;
+  color: #fff;
+}
+
+article div {
+  /* padding: 10px; */
+  margin: 10px;
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+  article {
+    padding: 0;
+  }
   .projects-container {
-    padding: 10px;
+    padding: 0;
     grid-template-columns: 1fr;
   }
 
   .project-card {
     width: 100%;
+  }
+
+ article div {
+    padding: 10px;
+    margin: 10px;
   }
 }

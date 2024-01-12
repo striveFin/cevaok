@@ -53,6 +53,7 @@ export default function Home() {
         <meta name="author" content={metadata.author} />
         <meta name="keywords" content={metadata.keywords} />
 
+
         {/* Google Tag Manager Script */}
         <GoogleAnalytics GA_MEASUREMENT_ID="G-1ZFG61N47M"/>
 
@@ -62,7 +63,7 @@ export default function Home() {
       <ProjectsPage />
       <TextContainer
         content={textContent}
-        bgColor="bg-gray-800"
+        bgColor="bg-black"
         showButton={false}
       />
       <TextContainer
