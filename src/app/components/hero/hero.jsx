@@ -8,7 +8,7 @@ const HeroComponent = () => {
     <div className={styles.heroImageContainer}>
       <div className={styles.imageWrapper}>
         <Image
-          src="/images/painters.jpg"
+          src="/images/painters.jpeg"
           layout="fill"
           alt="Hero Image"
           objectFit="cover"
