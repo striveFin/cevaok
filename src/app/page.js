@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import ProjectsPage from "./components/cards/cards";
 import HeroComponent from "./components/hero/hero";
 import Head from "next/head";
-// import TextContainer from "./components/texts/slider"
+import GoogleAnalytics from "./components/analytics/googleAnalytics";
 
 export const metadata = {
   title: "Professional Painting Services in London - J.S Painting & Decorating",
@@ -54,17 +54,8 @@ export default function Home() {
         <meta name="keywords" content={metadata.keywords} />
 
         {/* Google Tag Manager Script */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-1ZFG61N47M"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-1ZFG61N47M');
-            `,
-          }}
-        />
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-1ZFG61N47M"/>
+
       </Head>
       <HeroComponent />
 
