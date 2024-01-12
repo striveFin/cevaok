@@ -48,24 +48,24 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a subtle text shadow for contrast */
 }
 
+
 .contactButton {
+  display: inline-block;
+  padding: 6px 20px;
+  font-size: 1.2rem;
+  border: 2px solid #fff; /* Add a border for better visibility */
+  border-radius: 8px;
   background-color: #2196f3;
   color: white;
-  padding: 10px 15px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-  margin-top: 8px;
-  margin-right: 1rem;
   text-decoration: none;
-  display: inline-block;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Add a subtle text shadow for contrast */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  margin: 10px;
+  cursor: pointer;
 }
 
 .contactButton:hover {
   background-color: #45a049;
+  color: #fff;
 }
 
 /* Add these styles for the quote text */
@@ -90,15 +90,14 @@
   }
 
   .contacts {
-    text-align: left;
+    text-align: center;
     padding: 1rem;
   }
 
   .contactButton {
-    padding: 8px 16px; /* Adjust padding for better button size on mobile */
-    text-align: center;
-    margin-right: 0; /* Remove right margin on mobile */
-    margin-left: 0; /* Reset margin for mobile */
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 8px;
   }
 
   /* Additional style for spacing between buttons on mobile */

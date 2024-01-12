@@ -89,7 +89,9 @@ export default function Navbar() {
             </ul>
             <div className="flex flex-col justify-center items-center mt-16">
               <Link href="/pages/quote">
-                <button className="bg-[#CEFF00] text-slate-800 rounded-full uppercase font-bold py-3 w-[250px] mb-5">
+                <button 
+                onClick={handleSmallerScreensNavigation}
+                className="bg-[#CEFF00] text-slate-800 rounded-full uppercase font-bold py-3 w-[250px] mb-5">
                   Request a Quote
                 </button>
               </Link>
