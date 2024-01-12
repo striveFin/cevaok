@@ -1,82 +1,145 @@
 "use client"
-import React, { useState } from 'react';
 
-export default function Quote() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    projectDetails: '',
-  });
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import * as Yup from "yup";
+import { Form, Formik } from "formik";
+import { TextField } from "@mui/material";
+import { StyledBtn } from "./quote.style";
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+const ContactForm = () => {
+  const [from_name, setFrom_name] = useState("");
+  const [from_email, setFrom_email] = useState("");
+  const [telephone, setTelephone] = useState("");
+  const [message, setMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const form = useRef();
+
+  const textFieldStyle = {
+    background: "#fff",
+    borderRadius: "5px",
+    border: 0,
+    color: "#ececec",
+    "&:hover": {
+      border: 0,
+    },
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add your logic for handling the form submission (e.g., sending an email, storing data, etc.)
-    console.log('Form submitted:', formData);
+    const templateParams = {
+      from_name,
+      from_email,
+      telephone,
+      message,
+    };
+
+    emailjs
+      .sendForm("service_bc9o4mk", "template_ju3zgn7", form.current, "87kOQ-WSMCustdQIR")
+      .then(
+        (response) => {
+          // Show success message
+          setSuccessMessage("Email sent successfully!");
+          // Clear form fields
+          setFrom_name("");
+          setFrom_email("");
+          setTelephone("");
+          setMessage("");
+        },
+        (error) => {
+          console.error("Error sending email:", error);
+          // Handle error if needed
+        }
+      );
   };
 
+  const schema = Yup.object({
+    from_name: Yup.string().max(15, "Must be 15 characters or less").required("Required"),
+    from_email: Yup.string().email("Invalid email address").required("Required"),
+    telephone: Yup.string().max(15, "Must be 15 characters or less").required("Required"),
+    message: Yup.string().max(500, "Must be 500 characters or less").required("Required"),
+  });
+
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="bg-gray-100 p-8 rounded-md shadow-md max-w-md w-full">
-        <h2 className="text-2xl font-bold mb-4">Request a Quote</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="w-full border border-gray-300 rounded-md p-2"
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 font-semibold mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full border border-gray-300 rounded-md p-2"
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="projectDetails" className="block text-gray-700 font-semibold mb-2">
-              Project Details
-            </label>
-            <textarea
-              id="projectDetails"
-              name="projectDetails"
-              value={formData.projectDetails}
-              onChange={handleChange}
-              required
-              className="w-full border border-gray-300 rounded-md p-2"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-300"
-          >
-            Submit
-          </button>
-        </form>
-      </div>
+    <div style={{marginTop: "100px"}}>
+      <Formik
+        initialValues={{
+          from_name: "",
+          from_email: "",
+          telephone: "",
+          message: "",
+        }}
+        validationSchema={schema}
+        onSubmit={(values, { setSubmitting }) => {
+          handleSubmit(values);
+          form.current.reset();
+          setSubmitting(false);
+        }}
+      >
+        {({ values, errors, touched, handleChange, isSubmitting }) => (
+          <Form ref={form}>
+            <TextField
+                style={textFieldStyle}
+                margin="dense"
+                label="Nume"
+                name="from_name"
+                value={values.from_name}
+                onChange={handleChange} // eslint-disable-line}
+                // onBlur={handleBlur}
+                // helperText={touched.from_name ? errors.from_name : ''}
+                error={touched.from_name && Boolean(errors.from_name)}
+               
+                fullWidth
+              />
+              <TextField
+                style={textFieldStyle}
+                margin="dense"
+                label="Email"
+                name="from_email"
+                value={values.from_email}
+                onChange={handleChange}
+                // onBlur={handleBlur}
+                // helperText={touched.from_email ? errors.from_email : ''}
+                error={touched.from_email && Boolean(errors.from_email)}
+                //
+                fullWidth
+              />
+              <TextField
+                style={textFieldStyle}
+                margin="dense"
+                label="Telefon"
+                name="telephone"
+                value={values.telephone}
+                onChange={handleChange}
+                // onBlur={handleBlur}
+                // helperText={touched.telephone ? errors.telephone : ''}
+                error={touched.telephone && Boolean(errors.telephone)}
+                //
+                fullWidth
+              />
+              <TextField
+                style={textFieldStyle}
+                margin="dense"
+                label="Mesaj"
+                name="message"
+                value={values.message}
+                onChange={handleChange}
+                // onBlur={handleBlur}
+                // helperText={touched.message ? errors.message : ''}
+                error={touched.message && Boolean(errors.message)}
+                //
+                fullWidth
+                multiline
+                rows={2}
+              />
+            <StyledBtn type="submit" disabled={isSubmitting} size="large">
+              Trimite
+            </StyledBtn>
+          </Form>
+        )}
+      </Formik>
+      {successMessage && <p style={{ color: "green", textAlign: "center" }}>{successMessage}</p>}
     </div>
   );
 };
 
-
+export default ContactForm;

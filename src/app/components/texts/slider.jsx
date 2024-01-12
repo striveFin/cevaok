@@ -34,14 +34,14 @@ const TextContainer = ({content, bgColor, showButton}) => {
 ))}
 
 
-{showButton && (
+{/* {showButton && (
   <Link
     href="/pages/contact"
     className="block bg-blue-600 text-white font-bold py-1 px-1 rounded hover:bg-green-600 hover:border-white text-sm text-center  md:text-base md:px-6 md:py-3 md:w-36 md:mx-auto border-2 border-blue-500"
   >
     Contact Us
   </Link>
-)}
+)} */}
 
   </motion.div>
 

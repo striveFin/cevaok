@@ -14,9 +14,6 @@ const ProjectCard = ({ title, description, imageUrl, button }) => {
       <div className={styles["project-info"]}>
         <h3>{title}</h3>
         <p>{description}</p>
-        <Link href="/pages/about">
-          <button>{button}</button>
-        </Link>
       </div>
     </article>
   );

@@ -17,16 +17,16 @@ const Container = styled.div`
   background-color: #f0f0f0;
 `;
 
-const Title = styled.h1`
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-`;
+// const Title = styled.h1`
+//   font-size: 2.5rem;
+//   font-weight: bold;
+//   margin-bottom: 2rem;
+// `;
 
-const Paragraph = styled.p`
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
-`;
+// const Paragraph = styled.p`
+//   font-size: 1.25rem;
+//   margin-bottom: 1.5rem;
+// `;
 
 const ServiceSection = styled.h2`
 width: 50%;
@@ -57,10 +57,13 @@ const Card = styled.div`
 `;
 
 const ServiceContainer = styled.div`
-display: grid;
-grid-template-columns: 1fr 1fr;
-`;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+`;
 
 const ServiceImage = styled.div`
   width: 100%;

@@ -3,6 +3,16 @@ import ProjectsPage from "./components/cards/cards";
 import HeroComponent from "./components/hero/hero";
 import Head from "next/head";
 import GoogleAnalytics from "./components/analytics/googleAnalytics";
+import IconAnimation from "./components/icons/animation";
+import {
+  faPaintRoller,
+  faFill,
+  faSprayCan,
+  faStar,
+} from "@fortawesome/free-solid-svg-icons";
+
+import styles from "./components/icons/icons.module.css";
+import Link from "next/link";
 
 export const metadata = {
   title: "Professional Painting Services in London - J.S Painting & Decorating",
@@ -53,14 +63,49 @@ export default function Home() {
         <meta name="author" content={metadata.author} />
         <meta name="keywords" content={metadata.keywords} />
 
-
         {/* Google Tag Manager Script */}
-        <GoogleAnalytics GA_MEASUREMENT_ID="G-1ZFG61N47M"/>
-
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-1ZFG61N47M" />
       </Head>
       <HeroComponent />
-
+      <div className={styles.container}>
+        <IconAnimation
+          icon={faPaintRoller}
+          label="Interior Painting Projects"
+          initialValue={0}
+          finalValue={1500}
+          duration={4000}
+        />
+        <IconAnimation
+          icon={faFill}
+          label="Exterior Painting Projects"
+          initialValue={0}
+          finalValue={900}
+          duration={4000}
+        />
+        <IconAnimation
+          icon={faSprayCan}
+          label="Cabinets Refinishing"
+          initialValue={0}
+          finalValue={260}
+          duration={4000}
+        />
+        <IconAnimation
+          icon={faStar}
+          label="Happy Costumers"
+          initialValue={0}
+          finalValue={2500}
+          duration={4000}
+        />
+      </div>
       <ProjectsPage />
+      <div className="pb-5 text-lg">
+        <Link
+          href="/pages/contact"
+          className="block bg-blue-600 text-white font-bold py-1 px-1 rounded hover:bg-green-600 hover:border-white text-sm text-center  md:text-base md:px-6 md:py-3 md:w-36 md:mx-auto border-2 border-blue-500"
+        >
+          Contact Us
+        </Link>
+      </div>
       <TextContainer
         content={textContent}
         bgColor="bg-black"
@@ -68,7 +113,7 @@ export default function Home() {
       />
       <TextContainer
         content={textContent1}
-        bgColor="bg-gray-800"
+        bgColor="bg-gray-600"
         showButton={true}
       />
     </div>

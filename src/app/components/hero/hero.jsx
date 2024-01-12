@@ -10,7 +10,7 @@ const HeroComponent = () => {
         <Image
           src="/images/painters.jpeg"
           layout="fill"
-          alt="Hero Image"
+          alt="Painters in london"
           objectFit="cover"
         />
         <div className={styles.heroTextContainer}>
