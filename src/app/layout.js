@@ -3,7 +3,6 @@ import './globals.css'
 import Navbar from './components/navbar/navbar'
 import GoogleAnalytics from './components/analytics/googleAnalytics'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Painting and Decorating London',

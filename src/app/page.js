@@ -67,6 +67,16 @@ export default function Home() {
         <GoogleAnalytics GA_MEASUREMENT_ID="G-1ZFG61N47M" />
       </Head>
       <HeroComponent />
+      
+      <ProjectsPage />
+      <div className="pb-5 text-lg">
+        <Link
+          href="/pages/contact"
+          className="block bg-blue-600 text-white font-bold py-1 px-1 rounded hover:bg-green-600 hover:border-white text-sm text-center  md:text-base md:px-6 md:py-3 md:w-36 md:mx-auto border-2 border-blue-500"
+        >
+          Contact Us
+        </Link>
+      </div>
       <div className={styles.container}>
         <IconAnimation
           icon={faPaintRoller}
@@ -96,15 +106,6 @@ export default function Home() {
           finalValue={2500}
           duration={4000}
         />
-      </div>
-      <ProjectsPage />
-      <div className="pb-5 text-lg">
-        <Link
-          href="/pages/contact"
-          className="block bg-blue-600 text-white font-bold py-1 px-1 rounded hover:bg-green-600 hover:border-white text-sm text-center  md:text-base md:px-6 md:py-3 md:w-36 md:mx-auto border-2 border-blue-500"
-        >
-          Contact Us
-        </Link>
       </div>
       <TextContainer
         content={textContent}

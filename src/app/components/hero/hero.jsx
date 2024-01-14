@@ -7,11 +7,10 @@ const HeroComponent = () => {
   return (
     <div className={styles.heroImageContainer}>
       <div className={styles.imageWrapper}>
-        <Image
+        <img
           src="/images/painters.jpeg"
-          layout="fill"
           alt="Painters in london"
-          objectFit="cover"
+          // fill
         />
         <div className={styles.heroTextContainer}>
           <h1 className={styles.heroText}>Creating a Unique and Fresh Look</h1>

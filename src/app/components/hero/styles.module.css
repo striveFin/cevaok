@@ -30,6 +30,10 @@
   height: 100%;
 }
 
+.imageWrapper img {
+  height: 90vh;
+}
+
 /* Styles for the hero text and button */
 .heroTextContainer {
   position: absolute;

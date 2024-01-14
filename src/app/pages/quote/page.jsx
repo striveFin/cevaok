@@ -6,6 +6,8 @@ import * as Yup from "yup";
 import { Form, Formik } from "formik";
 import { TextField } from "@mui/material";
 import { StyledBtn } from "./quote.style";
+import GoogleAnalytics from "@/app/components/analytics/googleAnalytics";
+import Head from "next/head";
 
 const ContactForm = () => {
   const [from_name, setFrom_name] = useState("");
@@ -61,6 +63,11 @@ const ContactForm = () => {
 
   return (
     <div style={{marginTop: "100px"}}>
+            <Head>
+        <title>Request a Quote - J.S Painting London</title>
+        {/* Add your metadata, stylesheets, etc. */}
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-1ZFG61N47M" />
+      </Head>
       <Formik
         initialValues={{
           from_name: "",
