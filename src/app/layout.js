@@ -1,4 +1,3 @@
-import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/navbar/navbar'
 import GoogleAnalytics from './components/analytics/googleAnalytics'
@@ -6,6 +5,7 @@ import GoogleAnalytics from './components/analytics/googleAnalytics'
 
 export const metadata = {
   title: 'Painting and Decorating London',
+  
   description: 'Professional Painters in London',
 }
 

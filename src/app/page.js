@@ -54,6 +54,9 @@ export default function Home() {
       <Head>
         {/* Metadata */}
         <title>{metadata.title}</title>
+        <meta name="robots" content="index,follow"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
         <meta name="description" content={metadata.description} />
         <meta property="og:type" content={metadata.og.type} />
         <meta property="og:url" content={metadata.og.url} />

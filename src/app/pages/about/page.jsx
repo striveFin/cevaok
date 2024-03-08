@@ -142,6 +142,8 @@ const About = () => {
     <div>
       <Head>
         <title>About Us - J.S Painting</title>
+        <meta name="robots" content="index,follow"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* Add your metadata, stylesheets, etc. */}
         <GoogleAnalytics GA_MEASUREMENT_ID="G-1ZFG61N47M" />
       </Head>
