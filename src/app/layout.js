@@ -20,3 +20,9 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
+getRootLayout.metadata = {
+  title: 'Painting and Decorating London',
+  description: 'Professional Painters in London',
+}
+
+// Path: src/app/pages/contact/page.jsx
